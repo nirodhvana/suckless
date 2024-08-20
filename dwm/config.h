@@ -16,13 +16,12 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "FontAwesome:size=10:style=solid:antialias=true", "GohuFontuni11NerdFont-Regular:size=10:antialias=true" };
-static const char dmenufont[]       = "GohuFontuni11NerdFont-Bold:size=9:antialias=true";
+static const char *fonts[]          = { "FontAwesome:size=11:style=solid:antialias=true", "GohuFontuni11NerdFont-Regular:size=11:antialias=true" };
 
 #include "/home/Saatwat/.cache/wal/colors-wal-dwm.h"
 
 /* tagging */
-static const char *tags[] = { " ", " ", " ", " ", " ", " ", " " };
+static const char *tags[] = { " ", " ", " ", " ", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -129,8 +128,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY,                       XK_o,      winview,        {0} },
 	{ Mod1Mask,                     XK_Tab,    alttab,         {0} },
