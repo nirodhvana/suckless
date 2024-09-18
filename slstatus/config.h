@@ -65,10 +65,11 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-     { cpu_perc, " [CPU %s%] ", NULL },
-	{ ram_used, "[RAM %s] ", NULL },
-	{ temp,     "[TEMP %s] ", "/sys/class/thermal/thermal_zone0/temp" },
-	{ vol_perc, "[VOL %s%] ", "/dev/mixer1" },
-     { netspeed_rx, "[NET %sB/s]", "wlp3s0" },
-	{ datetime, "[%s]", "%a(%d)/%H:%M" },
+     { cpu_perc, " [CPU %s%]", NULL },
+	{ ram_used, "[RAM %s]", NULL },
+	/* I just like to use the physical wheel
+        { run_command, "[VOL %s%]", "volume.sh" },*/
+     { netspeed_rx, "[NET %sB/s|", "ens33" },
+     { netspeed_tx, "%sB/s]", "ens33" },
+	{ datetime, "[%s]", "%b-%a(%d),%Y/%H:%M" },
 };
