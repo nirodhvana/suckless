@@ -612,8 +612,8 @@ cleanup(void)
 		free(systray);
 	}
 	for (i = 0; i < CurLast; i++)
-		drw_cur_free(drw, cursor[i]);
-	for (i = 0; i < LENGTH(colors); i++)
+		drw_cur_free(drw, cursor[i]);\
+     for (i = 0; i < LENGTH(colors); i++)
 		free(scheme[i]);
 	free(scheme);
 	XDestroyWindow(dpy, wmcheckwin);
@@ -1858,7 +1858,6 @@ setmfact(const Arg *arg)
 	selmon->mfact = f;
 	arrange(selmon);
 }
-
 void
 setup(void)
 {

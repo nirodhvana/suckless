@@ -19,15 +19,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=9.5", "FontAwesome:size=9:antialias:true", "FontAwesome:size=9:antialias:true", "FontAwesome:style=Solid:size=9:antialias:true" };
 static const char dmenufont[]       = "monospace:size=9";
 
-#include "/home/Saatwat/.cache/wal/colors-wal-dwm.h"
-
 /* tagging */
 static const char *tags[] = { "", "", "", "", "", "", "" };
-
-static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
-static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
-static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
-static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 
 static const Rule rules[] = {
 	/* xprop(1):
