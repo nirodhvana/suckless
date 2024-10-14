@@ -1,4 +1,2 @@
-# Nityananda
-My Build of Programs that follow the Suckless Philosophy but actually suck less.
-
-:)
+# SuckLESS
+My Build Of Programs That Actually Suck LESS.
