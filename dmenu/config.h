@@ -4,8 +4,8 @@
 static int topbar = 0;                      /* -b  option; if 0, dmenu appears at bottom     */
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
-     "FontAwesome:size=9:style=solid",
-	"GohuFontuni11NerdFont-Regular:size=9"
+     "FontAwesome:size=8:style=solid",
+	"GohuFontuni11NerdFont-Regular:size=8"
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {

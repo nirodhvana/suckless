@@ -1,2 +1,2 @@
-# suckLESSER
-My Build Of Programs That Suck Even LESSER.
+# SuckLESS
+My Build Of Programs That Actually Suck LESS.

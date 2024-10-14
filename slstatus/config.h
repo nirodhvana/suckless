@@ -69,7 +69,7 @@ static const struct arg args[] = {
 	{ ram_used, "[RAM %s]", NULL },
 	/* I just like to use the physical wheel
         { run_command, "[VOL %s%]", "volume.sh" },*/
-     { netspeed_rx, "[NET %sB/s|", "ens33" },
+     { netspeed_rx, "[NET %s|", "ens33" },
      { netspeed_tx, "%sB/s]", "ens33" },
-	{ datetime, "[%s]", "%b-%a(%d),%Y/%H:%M" },
+	{ datetime, "[%s]", "%b-%d,%a/%H:%M" },
 };
