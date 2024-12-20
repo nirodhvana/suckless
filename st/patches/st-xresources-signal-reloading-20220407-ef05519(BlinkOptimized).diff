@@ -17,13 +17,13 @@ index 2a3bd38..e8fe7ad 100644
  #include <X11/Xft/Xft.h>
  #include <X11/XKBlib.h>
 +#include <X11/Xresource.h>
- 
+
  char *argv0;
  #include "arg.h"
 @@ -2011,6 +2012,118 @@ run(void)
  	}
  }
- 
+
 +
 +#define XRESOURCE_LOAD_META(NAME)					\
 +	if(!XrmGetResource(xrdb, "st." NAME, "st." NAME, &type, &ret))	\
@@ -140,7 +140,7 @@ index 2a3bd38..e8fe7ad 100644
  usage(void)
  {
 @@ -2084,6 +2197,8 @@ run:
- 
+
  	setlocale(LC_CTYPE, "");
  	XSetLocaleModifiers("");
 +	xrdb_load();
@@ -148,6 +148,6 @@ index 2a3bd38..e8fe7ad 100644
  	cols = MAX(cols, 1);
  	rows = MAX(rows, 1);
  	tnew(cols, rows);
--- 
+--
 2.35.1
 

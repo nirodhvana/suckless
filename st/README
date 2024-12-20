@@ -1,34 +1,50 @@
 st - simple terminal
 --------------------
-st is a simple terminal emulator for X which sucks less.
 
+This is my very own build of st
 
-Requirements
-------------
-In order to build st you need the Xlib header files.
-
-
-Installation
-------------
-Edit config.mk to match your local setup (st is installed into
-the /usr/local namespace by default).
-
-Afterwards enter the following command to build and install st (if
-necessary as root):
-
-    make clean install
-
-
-Running st
-----------
-If you did not install st with make clean install, you must compile
-the st terminfo entry with the following command:
-
-    tic -sx st.info
-
-See the man page for additional details.
-
-Credits
+patches
 -------
-Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
 
+I have applied my very own select patches which can be found in the patches directory
+
+Additional changes
+------------------
+
+Additional changes have been made from the following pages:
+https://maximilian-schillinger.de/articles/st-as-alacritty-replacement.html
+https://st.suckless.org/patches/clipboard/
+https://www.reddit.com/r/linuxquestions/comments/9b3wai/clipboard_in_st_terminal/
+
+The main ones are as follows:
+
+Write access to the clipboard
+-----------------------------
+
+This is as easy as setting allowwindowops to 1:
+
+@@ -46,7 +46,7 @@ int allowaltscreen = 1;
+
+ /* allow certain non-interactive (insecure) window operations such as:
+    setting the clipboard text */
+-int allowwindowops = 0;
++int allowwindowops = 1;
+
+More common shortcuts
+---------------------
+
+Use Ctrl++/-/0 for increasing/decreasing/resetting the font size:
+
+@@ -199,6 +199,9 @@ static Shortcut shortcuts[] = {
+     { TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
+     { TERMMOD,              XK_Next,        zoom,           {.f = -1} },
+     { TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
++    { ControlMask,          XK_plus,        zoom,           {.f = +1} },
++    { ControlMask,          XK_minus,       zoom,           {.f = -1} },
++    { ControlMask,          XK_0,           zoomreset,      {.f =  0} },
+     { TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
+     { TERMMOD,              XK_V,           clippaste,      {.i =  0} },
+     { TERMMOD,              XK_Y,           selpaste,
+
+Forked by Saatwat
+-----------------

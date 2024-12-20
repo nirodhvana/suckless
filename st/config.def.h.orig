@@ -5,11 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FontAwesome:size=10:style=solid:antialias=true:autohint=true";
+static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-    "FontAwesome:size=10:style=solid:antialias=true:autohint=true",
-    "GohuFontuni11NerdFont-Regular:size=10:antialias=true:autohint=true"
+/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
+/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
 };
 
 static int borderpx = 2;
@@ -51,7 +51,7 @@ int allowaltscreen = 1;
 
 /* allow certain non-interactive (insecure) window operations such as:
    setting the clipboard text */
-int allowwindowops = 1;
+int allowwindowops = 0;
 
 /*
  * draw latency range in ms - from new content/keypress/etc until drawing.
@@ -71,7 +71,7 @@ static unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 3;
+static unsigned int cursorthickness = 2;
 
 /*
  * 1: render most of the lines/blocks characters without using the font for
@@ -112,7 +112,8 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = { /* 8 normal colors */
+static const char *colorname[] = {
+	/* 8 normal colors */
 	"black",
 	"red3",
 	"green3",
@@ -137,7 +138,7 @@ static const char *colorname[] = { /* 8 normal colors */
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
-	"green3", /* default foreground colour */
+	"gray90", /* default foreground colour */
 	"black", /* default background colour */
 };
 
@@ -157,12 +158,11 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-
 static unsigned int cursorshape = 2;
 
 /*
  * Default columns and rows numbers
-*/
+ */
 
 static unsigned int cols = 80;
 static unsigned int rows = 24;
@@ -212,13 +212,12 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-     { ControlMask,          XK_plus,        zoom,           {.f = +1} },
-     { ControlMask,          XK_minus,       zoom,           {.f = -1} },
-     { ControlMask,          XK_0,           zoomreset,      {.f =  0} },
+	{ TERMMOD,              XK_K,           zoom,           {.f = +1} },
+	{ TERMMOD,              XK_J,           zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
-     { TERMMOD,              XK_V,           clippaste,       {.i =  0} },
-	{ ShiftMask,            XK_Insert,      clippaste,       {.i =  0} },
+     { TERMMOD,              XK_V,           clippaste,      {.i =  0} },
+	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ControlMask,          XK_k,           kscrollup,      {.i = -1} },
 	{ ControlMask,          XK_j,           kscrolldown,    {.i = -1} },
